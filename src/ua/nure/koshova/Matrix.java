@@ -84,7 +84,7 @@ public abstract class Matrix {
     private double determinant(Matrix matrix) {
         double calcResult = 0.0;
         if (matrix.getSize() == 2) {
-            calcResult = this.getMatrix(0, 0) * matrix.getMatrix(1, 1) - matrix.getMatrix(1, 0) * matrix.getMatrix(0, 1);
+            calcResult = matrix.getMatrix(0, 0) * matrix.getMatrix(1, 1) - matrix.getMatrix(1, 0) * matrix.getMatrix(0, 1);
         } else {
             int coefficient = 1;
             for (int i = 0; i < matrix.getSize(); i++) {

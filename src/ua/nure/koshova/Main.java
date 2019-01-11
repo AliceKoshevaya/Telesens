@@ -7,9 +7,12 @@ public class Main {
         myMatrix.fillMatrixManually();
         myMatrix.printMatrix();
         System.out.println();
+        Matrix res = myMatrix.GetMinor(myMatrix,0,0);
+        res.printMatrix();
+        System.out.println(myMatrix.getDeteminant());
         Matrix resInverse = myMatrix.inverseMatrix();
         resInverse.printMatrix();
-        System.out.println(myMatrix.getDeteminant());
+//        System.out.println(myMatrix.getDeteminant());
 //        Matrix myMatrix2 = new MyMatrix(4);
 //        myMatrix2.fillMatrixManually();
 //        myMatrix2.printMatrix();
