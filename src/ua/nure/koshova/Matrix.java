@@ -82,9 +82,9 @@ public abstract class Matrix {
     }
 
     private double determinant(Matrix matrix) {
-        double calcResult = 0.0;
+        double result = 0.0;
         if (matrix.getSize() == 2) {
-            calcResult = matrix.getMatrix(0, 0) * matrix.getMatrix(1, 1) - matrix.getMatrix(1, 0) * matrix.getMatrix(0, 1);
+            result = matrix.getMatrix(0, 0) * matrix.getMatrix(1, 1) - matrix.getMatrix(1, 0) * matrix.getMatrix(0, 1);
         } else {
             int coefficient = 1;
             for (int i = 0; i < matrix.getSize(); i++) {
@@ -93,13 +93,13 @@ public abstract class Matrix {
                 } else {
                     coefficient = 1;
                 }
-                calcResult = calcResult + (coefficient * getMatrix(0, i) * this.determinant(this.GetMinor(matrix, 0, i)));
+                result = result + (coefficient * getMatrix(0, i) * this.determinant(this.getMinor(matrix, 0, i)));
             }
         }
-        return calcResult;
+        return result;
     }
 
-    public Matrix GetMinor(Matrix matrix, int row, int column) {
+    private Matrix getMinor(Matrix matrix, int row, int column) {
         int minorLength = matrix.getSize() - 1;
         Matrix matrixMinor = newInstance(minorLength);
         int extraLine = 0;
